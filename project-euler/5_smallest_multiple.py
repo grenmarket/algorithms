@@ -1,6 +1,14 @@
-curr = 2 * 3 * 5 * 7 * 11 * 13 * 17 * 19
-fact = {4,6,8,9,10,12,14,15,16,18}
-mult = {2:0,3:0,5:0,7:0,9:0}
+factors = [i for i in range(2,21)]
 
-for f in fact:
+curr = 1
+found = False
 
+for i in range(1, 19):
+    for j in range(0, i):
+        if factors[i] % factors[j] == 0:
+            factors[i] = int(factors[i]/factors[j])
+
+for f in factors:
+    curr = curr * f
+
+print(curr)
